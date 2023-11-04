@@ -76,22 +76,10 @@ class Developer: public Employee {
     }
 };
 
-class Teacher: public Employee {
-    public:
-    string Subject;
-    Teacher(string name, string company, int age, string subject):Employee(name, company,age)
-    {
-        Subject = subject;
-    }
-    
-    void PrepLesson() {
-        std::cout<<Name<<" is preparing "<< Subject << " lesson. " <<std::endl;
-    }
-};
-
 int main() {
-    Developer d = Developer("Hafsa", "IT", 21, "C++");
-    Teacher t = Teacher ("Noorain", "CoolSchool", 35, "History");
-    t.PrepLesson();
-    t.AskForPromotion();
+    Employee emp1= Employee("Chandan", "Dev", 21);
+    Employee emp2= Employee("Abhishek", "IT", 21);
+    Developer d = Developer("Hafsa", "Dev", 21, "C++");
+    d.FixBug();
+    d.AskForPromotion();
 }

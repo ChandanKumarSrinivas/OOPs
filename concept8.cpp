@@ -101,8 +101,8 @@ class Teacher: public Employee {
 };
 
 int main() {
-    Developer d = Developer("Hafsa", "IT", 21, "C++");
-    Teacher t = Teacher ("Noorain", "CoolSchool", 35, "History");
+    Developer d = Developer("Chandan", "Dev", 21, "C++");
+    Teacher t = Teacher ("Abhishek", "IT", 31, "Science");
     
     Employee *e1 = &d;
     Employee *e2 = &t;

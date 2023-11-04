@@ -56,6 +56,10 @@ class Employee {
         }
     }
     
+    void Work() {
+        std::cout<<Name<<" is checking email, task backlog, performing tasks..."<< std::endl;
+    }
+    
     Employee(string name, string company, int age) {
         Name = name;
         Company = company;
@@ -74,12 +78,31 @@ class Developer: public Employee {
     void FixBug() {
         std::cout<<Name<<" fixed bug using "<< FavProgrLang << std::endl;
     }
+    
+    void Work() {
+        std::cout<<Name<<" is writing "<<FavProgrLang<< " code. " << std::endl;
+    }
+};
+
+class Teacher: public Employee {
+    public:
+    string Subject;
+    Teacher(string name, string company, int age, string subject):Employee(name, company,age)
+    {
+        Subject = subject;
+    }
+    
+    void PrepLesson() {
+        std::cout<<Name<<" is preparing "<< Subject << " lesson. " <<std::endl;
+    }
+    void Work() {
+        std::cout<<Name<<" teaching "<<Subject<< std::endl;
+    }
 };
 
 int main() {
-    Employee emp1= Employee("Hafsa", "IT", 25);
-    Employee emp2= Employee("Noorain", "Business", 35);
-    Developer d = Developer("Hafsa", "IT", 21, "C++");
-    d.FixBug();
-    d.AskForPromotion();
+    Developer d = Developer("Chandan", "Dev", 21, "C++");
+    Teacher t = Teacher ("Abhishek", "Drait", 31, "Science");
+    d.Work();
+    t.Work();
 }

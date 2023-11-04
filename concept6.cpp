@@ -7,9 +7,11 @@ class AbstractEmp {
 
 class Employee {
     private:
-    string Name;
     string Company;
     int Age;
+    
+    protected:
+    string Name;
     
     public:
     void setName(string name) {
@@ -61,9 +63,35 @@ class Employee {
     }
 };
 
+class Developer: public Employee {
+    public:
+    string FavProgrLang;
+    Developer(string name, string company, int age, string lang):Employee(name, company,age)
+    {
+        FavProgrLang = lang;
+    }
+    
+    void FixBug() {
+        std::cout<<Name<<" fixed bug using "<< FavProgrLang << std::endl;
+    }
+};
+
+class Teacher: public Employee {
+    public:
+    string Subject;
+    Teacher(string name, string company, int age, string subject):Employee(name, company,age)
+    {
+        Subject = subject;
+    }
+    
+    void PrepLesson() {
+        std::cout<<Name<<" is preparing "<< Subject << " lesson. " <<std::endl;
+    }
+};
+
 int main() {
-    Employee emp1= Employee("Hafsa", "IT", 25);
-    Employee emp2= Employee("Noorain", "Business", 35);
-    emp1.AskForPromotion();
-    emp2.AskForPromotion();
+    Developer d = Developer("Chandan", "Dev", 21, "C++");
+    Teacher t = Teacher ("Abhishek", "Drait", 21, "Science");
+    t.PrepLesson();
+    t.AskForPromotion();
 }

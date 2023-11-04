@@ -7,11 +7,9 @@ class AbstractEmp {
 
 class Employee {
     private:
+    string Name;
     string Company;
     int Age;
-    
-    protected:
-    string Name;
     
     public:
     void setName(string name) {
@@ -56,10 +54,6 @@ class Employee {
         }
     }
     
-    void Work() {
-        std::cout<<Name<<" is checking email, task backlog, performing tasks..."<< std::endl;
-    }
-    
     Employee(string name, string company, int age) {
         Name = name;
         Company = company;
@@ -67,7 +61,7 @@ class Employee {
     }
 };
 
-class Developer: public Employee {
+class Developer: Employee {
     public:
     string FavProgrLang;
     Developer(string name, string company, int age, string lang):Employee(name, company,age)
@@ -76,33 +70,13 @@ class Developer: public Employee {
     }
     
     void FixBug() {
-        std::cout<<Name<<" fixed bug using "<< FavProgrLang << std::endl;
-    }
-    
-    void Work() {
-        std::cout<<Name<<" is writing "<<FavProgrLang<< " code. " << std::endl;
-    }
-};
-
-class Teacher: public Employee {
-    public:
-    string Subject;
-    Teacher(string name, string company, int age, string subject):Employee(name, company,age)
-    {
-        Subject = subject;
-    }
-    
-    void PrepLesson() {
-        std::cout<<Name<<" is preparing "<< Subject << " lesson. " <<std::endl;
-    }
-    void Work() {
-        std::cout<<Name<<" teaching "<<Subject<< std::endl;
+        std::cout<<getName()<<" fixed bug using "<< FavProgrLang << std::endl;
     }
 };
 
 int main() {
-    Developer d = Developer("Hafsa", "IT", 21, "C++");
-    Teacher t = Teacher ("Noorain", "CoolSchool", 35, "History");
-    d.Work();
-    t.Work();
+    Employee emp1= Employee("Chandan", "Dev", 21);
+    Employee emp2= Employee("Abhishek", "IT", 21);
+    Developer d = Developer("Chandan", "Dev", 21, "C++");
+    d.FixBug();
 }

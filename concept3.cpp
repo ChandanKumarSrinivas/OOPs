@@ -61,22 +61,9 @@ class Employee {
     }
 };
 
-class Developer: Employee {
-    public:
-    string FavProgrLang;
-    Developer(string name, string company, int age, string lang):Employee(name, company,age)
-    {
-        FavProgrLang = lang;
-    }
-    
-    void FixBug() {
-        std::cout<<getName()<<" fixed bug using "<< FavProgrLang << std::endl;
-    }
-};
-
 int main() {
-    Employee emp1= Employee("Hafsa", "IT", 25);
-    Employee emp2= Employee("Noorain", "Business", 35);
-    Developer d = Developer("Hafsa", "IT", 21, "C++");
-    d.FixBug();
+    Employee emp1= Employee("Chandan", "Dev", 21);
+    Employee emp2= Employee("Abhishek", "IT", 21);
+    emp1.AskForPromotion();
+    emp2.AskForPromotion();
 }

@@ -49,9 +49,9 @@ class Employee {
 };
 
 int main() {
-    Employee emp1= Employee("Hafsa", "IT", 21);
+    Employee emp1= Employee("Chandan", "Dev", 21);
     emp1.IntroduceYourself();
-    Employee emp2= Employee("Noorain", "Business", 25);
+    Employee emp2= Employee("Abhishek", "IT", 21);
     emp2.IntroduceYourself();
     emp1.setAge(20);
      std::cout << emp1.getName() << " is " << emp1.getAge() << " years old " << std::endl;

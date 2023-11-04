@@ -21,20 +21,8 @@ class Employee {
 };
 
 int main() {
-    Employee emp1= Employee("Hafsa", "IT", 21);
+    Employee emp1= Employee("Chandan", "Dev", 21);
     emp1.IntroduceYourself();
-    Employee emp2= Employee("Noorain", "Business", 25);
+    Employee emp2= Employee("Abhishek", "IT", 21);
     emp2.IntroduceYourself();
-    
-    /*Employee emp1, emp2;
-    
-    emp1.Name = "Hafsa";
-    emp1.Company = "IT";
-    emp1.Age = 21;
-    emp1.IntroduceYourself();
-    
-    emp2.Name = "Noorain";
-    emp2.Company = "Business";
-    emp2.Age = 25;
-    emp2.IntroduceYourself();*/
 }
